@@ -17,8 +17,15 @@ spec:
         app: pages
     spec:
       containers:
-      - image: ravi2429/pages:1.0
+      - image: ravi2429/pages:config
         name: pages
+        imagePullPolicy: Always
         ports:
           - containerPort: 8080
+        env:
+            - name: PAGE_CONTENT
+              valueFrom:
+                configMapKeyRef:
+                  name: pages-config-map
+                  key: PAGE_CONTENT
 
