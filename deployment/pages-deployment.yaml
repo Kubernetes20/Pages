@@ -17,7 +17,7 @@ spec:
         app: pages
     spec:
       containers:
-      - image: ravi2429/pages:config
+      - image: ravi2429/pages:pipeline
         name: pages
         imagePullPolicy: Always
         ports:
